@@ -10,6 +10,11 @@ import Drawer from '@mui/material/Drawer';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import { useNavigate } from 'react-router-dom';
+
+
+
+
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: 'flex',
@@ -29,6 +34,7 @@ export default function AppAppBar() {
     const [open, setOpen] = React.useState(false);
     const toggleDrawer = (newOpen: boolean) => () => setOpen(newOpen);
 
+    const navigate = useNavigate();
     return (
         <AppBar position="fixed" enableColorOnDark sx={{ boxShadow: 0, bgcolor: 'transparent', mt: '24px' }}>
             <Container maxWidth="lg">
@@ -55,6 +61,7 @@ export default function AppAppBar() {
                         <Button
                             variant="contained"
                             size="medium"
+                            onClick={() => navigate('/signin')}
                             sx={{
                                 textTransform: 'none',
                                 fontWeight: '600',

@@ -117,7 +117,7 @@ export default function LandingPage() {
                     <Button
                         variant="contained"
                         size="large"
-                        onClick={() => navigate("/content")}
+                        onClick={() => navigate("/signin")}
                         sx={{
                             px: 6,
                             py: 1.5,

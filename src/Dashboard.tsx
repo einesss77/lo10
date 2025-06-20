@@ -7,14 +7,17 @@ import AppAppBar from "./components/AppAppAppBar";
 import SideMenu from './components/SideMenu';
 import OffersTable from './components/OffersTable';
 import Footer from './components/Footer';
-import AppTheme from './theme/AppTheme'; // garde ceci si AppTheme.tsx existe bien
+import AppTheme from './theme/AppTheme';
+import DashboardWithMetrics from "./components/Metrics";
+import FooterInCache from "./components/FooterInCache";
 
 export default function Dashboard(props: { disableCustomTheme?: boolean }) {
     return (
         <AppTheme {...props}>
+            <SideMenu />
             <CssBaseline enableColorScheme />
             <Box sx={{ display: 'flex' }}>
-                <SideMenu />
+
 
                 <Box
                     component="main"
@@ -29,10 +32,20 @@ export default function Dashboard(props: { disableCustomTheme?: boolean }) {
                         minHeight: '100vh',
                     })}
                 >
-                    <Stack spacing={2} sx={{ mx: 3, mt: { xs: 8, md: 0 }, flexGrow: 1 }}>
+                    <Stack
+
+                        sx={{
+                            mx: 3,
+                            mt: { xs: 8, md: 0 },
+                            flexGrow: 1,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                    >
                         <OffersTable />
                     </Stack>
-                    <Footer />
+                    <FooterInCache />
                 </Box>
             </Box>
         </AppTheme>
